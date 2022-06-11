@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import SignupForm
 
 # Create your views here.
 def index(request):
@@ -6,4 +7,7 @@ def index(request):
 
 
 def signup(request):
-    return render(request, 'registration/signup.html')
+
+    form = SignupForm()
+    return render(request, 'registration/signup.html', {'form': form })
+
