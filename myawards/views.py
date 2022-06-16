@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-from .forms import SignupForm, PostForm, UpdateUserForm, UpdateUserProfileForm
+from .forms import SignupForm, PostForm, UpdateUserForm, UpdateUserProfileForm, RatingsForm
 from rest_framework import viewsets
 from .models import Profile, Post
 from .serializers import ProfileSerializer, UserSerializer
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 
 # Create your views here.
@@ -77,8 +78,11 @@ def edit_profile(request, username):
 
 def project(request, post):
     post = Post.objects.get(title=post)
-
+    [design, usability, content] = [[0], [0], [0]]
+    form = RatingsForm()
     params = {
-        'post': post
+        'post': post,
+        'rating_form': form
+
     }
     return render(request, 'project.html', params)
