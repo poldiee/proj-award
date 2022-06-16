@@ -71,6 +71,8 @@ class Rating(models.Model):
         ratings = Rating.objects.filter(post_id=id).all()
         return ratings
 
+    def __str__(self):
+        return f'{self.post} Rating'
 
 
 

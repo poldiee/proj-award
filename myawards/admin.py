@@ -3,5 +3,6 @@ from . import models
 
 admin.site.register(models.Profile)
 admin.site.register(models.Post)
+admin.site.register(models.Rating)
 
 # Register your models here.
