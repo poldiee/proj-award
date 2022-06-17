@@ -129,3 +129,18 @@ def project(request, post):
 
     }
     return render(request, 'project.html', params)
+
+def search_project(request):
+    if 'title' in request.GET and request.GET['title']:
+        title = request.GET.get("title")
+        results = Post.search_project(title)
+        print(results)
+        message = f'name'
+        params = {
+            'results': results,
+            'message': message
+        }
+        return render(request, 'results.html', params)
+    else:
+        message = "you haven't searched any image category"
+    return render(request, 'results.html', {'message': message})

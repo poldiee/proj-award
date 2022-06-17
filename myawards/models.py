@@ -42,6 +42,10 @@ class Post(models.Model):
         return f'{self.title}'
 
 
+    @classmethod
+    def search_project(cls, title):
+        return cls.objects.filter(post__title__icontains=title).all()
+
 class Rating(models.Model):
     rating = (
         (1, '1'),
