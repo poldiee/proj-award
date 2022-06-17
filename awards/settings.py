@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 import dj_database_url
+import django_heroku
 from pathlib import Path
 from decouple import config, Csv
 
@@ -156,3 +157,5 @@ REST_FRAMEWORK = {
 import dj_database_url 
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
+
+django_heroku.settings(locals())

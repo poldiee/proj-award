@@ -32,8 +32,12 @@
                   {{ rating.design_average}}<br />
                   <span class="rates">design</span>
                 </h3>
-                <h3 id="usable">{{ rating.usability_average }}</h3>
-                <h3 id="content">{{ rating.content_average }}</h3>
+                <h3 id="usable" class="mx-auto">{{ rating.usability_average }}<br>
+                    <span class="rates">usability</span>
+                </h3>
+                <h3 id="content">{{ rating.content_average }}<br>
+                    <span class="rates">content</span>
+                </h3>
                 {% endif %} {% endfor %}
               </div>
               <div class="col-md-3"></div>
