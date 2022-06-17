@@ -13,7 +13,7 @@
             <div class=" ">
                 <div class="row">
                     <div class="col-md-3" style="padding-top:4%;">
-                        <p class="text-white" style="margin-left:20%"><strong>Site of the Day</strong>
+                        <p class="text-white" style="margin-left:20%"><strong>site of day</strong>
                             {{random_post.date|date}}</p>
                         <div class="visit" style="margin-left:20%; padding-top:90%">
                             <a class="btn btn-sm btn-info" href="{{random_post.url}}">visit</a><a
@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-md-6 " style="padding-top:6%; margin:0px; padding-bottom:14%;">
                         <h2 class="text-white" style="margin-left:70px">{{random_post.title}}</h2>
-                        <h4 class="text-white" style="margin-left:70px">By {{random_post.user.username}}</h4>
+                        <h4 class="text-white" style="margin-left:70px">by {{random_post.user.username}}</h4>
                         <div class="d-flex flex-row mx-auto">
                             {% for rating in random_post.ratings.all %}
                             {% if forloop.counter is random_post.ratings.all.count %}
@@ -92,12 +92,12 @@
                         </div>
                         <div class="card-body">
                             <h6 class="card-title"><a href="{% url 'project' post.title %}">{{post.title|title}}</a> <a
-                                    class="btn btn-sm btn-outline-info" href="{{ post.url }}" style=> View</a></h6>
+                                    class="btn btn-sm btn-outline-info" href="{{ post.url }}" style=> view</a></h6>
                             <hr>
                             <p class="card-text "><img src="{{post.user.profile.profile_picture.url}}"
                                                        class="nav-img mr-2"
                                                        alt="">
-                                By {{post.user.username|title}} <span style="float:right">{{post.date|date}}</span>
+                                by {{post.user.username|title}} <span style="float:right">{{post.date|date}}</span>
 
 
                             </p>
